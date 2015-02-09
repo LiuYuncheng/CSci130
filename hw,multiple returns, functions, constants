@@ -1,0 +1,46 @@
+package main
+
+import "fmt"
+
+
+type Quality struct {    //Fruit Quality
+	name string
+	time int   //from the picking time(day)
+	place string //Place of production
+}
+
+
+func PrintFruit (Fruit Quality) {
+	fmt.Println (Fruit.name)
+	fmt.Println (Fruit.time)
+	fmt.Println (Fruit.place)
+}
+
+
+func getFruit (Fruit Quality) (string, int, string){
+	return Fruit.name, Fruit.time, Fruit.place
+}
+
+
+const (
+	N = 10
+)
+
+func main () {
+	var Fruit = Quality {
+		name: "orange",
+		time: 2,
+		place: "Fresno",
+	}
+	PrintFruit(Fruit)
+
+
+
+var name, _, _ = getFruit(Fruit)
+
+fmt.Println(name)
+
+
+fmt.Println (N)
+
+}
