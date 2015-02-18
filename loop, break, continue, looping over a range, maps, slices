@@ -1,0 +1,70 @@
+package main
+
+import "fmt"
+
+func main () {
+
+
+	
+	for i := 1; i < 6; i++ {
+		fmt.Println(i)
+	}
+
+
+
+	j := 1
+	for j < 4 {
+		fmt.Println (j)
+		j++
+	}
+	
+
+
+	
+	for i := 1; i < 10; i++ {
+		if i == 8 {
+			break
+		}
+		fmt.Println (i)
+	}
+
+
+
+	
+	for i := 0; i < 10; i++ {
+		if i % 2 == 0 {
+			continue
+		} else {
+			fmt.Println (i)
+		}
+	}
+
+
+
+	//slice
+	mySlice := []string { 
+		"1914.07.28-1918.11.11",
+		"1939.09.01-1945.09.02",
+	}
+
+	for i, time := range mySlice {
+		fmt.Println (i, " — ", time)
+	}
+
+
+
+	//map
+	myMap := map[string]string { 
+		"Type":"Pants & Jeans",
+		"Name":"Casual Pants",
+		"Brand":"Ports",
+		"Style No.":"MC8P002WFD007",
+		"Price":"$394",
+	}
+
+	for docu, cont := range myMap {
+		fmt.Println ("Document Name: ", docu, " Content: ", cont)
+	}
+
+
+}
