@@ -1,0 +1,66 @@
+
+package main
+
+import "fmt"
+
+type contact struct {
+	   greet    string
+	   name     string
+}
+
+type myPrintType func(string)
+
+func Contact(contact contact,ax func(string)){
+	  m,s := CreateMessage(contact.name,contact.greet)
+	  ax(m)
+	  ax(s)
+}
+
+func CreateMessage(name string,greet ...string)(MyGreeting string,myName string){
+	  MyGreeting=greet[0]+" "+name
+	  myName="\nHey,"+name+"\n"
+	  return
+}
+
+func myPrint(s string){
+fmt.Print(s)
+}
+
+func myPrintFunction(custom string)myPrintType {
+return func(s string) {
+		 fmt.Print(s+custom)
+	}
+}
+
+func main() {
+	 q := contact{}
+	 q.greet="Good night,"
+	 q.name="Tony."
+	 Contact(q,myPrintFunction(" ^_^ "))
+
+	 if (true) {
+	 	fmt.Println ("Hello.")
+	 }
+
+	 if (2 > 1) {
+		fmt.Println("true")
+	 } else {
+		fmt.Println("false")
+	 }
+
+	 var1 := 4
+	 switch (var1) {
+	 case 0:
+	 fmt.Println(0)
+	 case 1:
+	 fmt.Println(1)
+	 case 2:
+	 fmt.Println(2)
+	 case 3:
+	 fmt.Println(3)
+	 case 4:
+	 fmt.Println(4)
+	 }
+
+
+}
