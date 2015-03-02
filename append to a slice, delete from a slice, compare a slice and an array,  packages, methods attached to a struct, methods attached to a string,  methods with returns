@@ -1,0 +1,63 @@
+package main
+
+import (
+	"fmt"
+)
+
+type content struct {
+	name string
+	price int
+	place string        //place of production
+}
+
+type MyString string
+
+func (x content) apply () {
+	fmt.Println ("Beverage, ", x.name, ", price $", x.price, ", origin in ", x.place)
+}
+
+func (s MyString) print () {
+	fmt.Println (s)
+}
+
+func (x content) accepted () bool {
+	if x.name == "Coffee Bean" && x.price == 15 && x.place == "Brazil" {
+		return true
+	} else {
+		return false
+	}
+}
+
+func main () {
+	
+	mySlice := []string {"Have a great", "day."}  //append to a slice
+	mySlice = append(mySlice, "See you Tony.")
+	fmt.Println(mySlice)
+
+	mySlice = append(mySlice[:2])  //delete from a slice
+	fmt.Println(mySlice)
+
+	fmt.Print ("An array: ")        //compare a slice and an array
+	Array1 := [7] int {1,2,3,4,5,6,7}
+	fmt.Print (Array1)
+	fmt.Println ()
+
+	fmt.Print ("A slice: ")
+	Slice3 := [] int {1,2,3,4,5,6}
+	Slice3 = append (Slice3, 6)
+	fmt.Print (Slice3)
+	fmt.Println ()
+
+
+	var CoffeeBean = content {}            //methods attached to a struct
+	CoffeeBean.name = "Coffee Bean"
+	CoffeeBean.price = 15
+	CoffeeBean.place = "Brazil"
+	CoffeeBean.apply()
+
+	var Park MyString = "Amusement Park"      //methods attached to a string
+	Park.print ()
+
+	fmt.Println (CoffeeBean.accepted())       //methods with return values
+	
+}
