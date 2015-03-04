@@ -9,5 +9,5 @@ fmt.Scanf("%f", &input)
 
 output:=(input-32)*(5.0/9.0)
 
-fmt.Println("100 fahrenheit to celsius is ",output)
+fmt.Println("Fahrenheit to celsius is ",output,".")
 }
