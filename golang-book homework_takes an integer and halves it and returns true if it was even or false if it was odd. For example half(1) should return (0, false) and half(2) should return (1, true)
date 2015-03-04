@@ -1,0 +1,16 @@
+package main
+
+import "fmt"
+
+func half(x int) (int,bool){
+if x%2==0{
+return 1,true
+}
+return 0,false
+}
+func main(){
+num1:=1
+num2:=6
+fmt.Println(half(num1))
+fmt.Println(half(num2))
+}
