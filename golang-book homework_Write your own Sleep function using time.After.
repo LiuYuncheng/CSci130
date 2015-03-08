@@ -1,0 +1,16 @@
+package main
+import(
+"fmt"
+"time"
+)
+
+func sleep (n int){
+for i:=0; i<n; i++{
+<- time.After(time.Second)
+}
+}
+
+func main(){
+sleep(3)
+fmt.Println("done")
+}
