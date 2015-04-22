@@ -1,0 +1,19 @@
+application: double-willow-92121
+version: 1
+runtime: go
+api_version: go1
+
+handlers:
+- url: /.*
+  script: _go_app
+- url: /posts/.*
+  script: _go_app
+- url: /edit/.*
+  script: _go_app
+  login: required
+- url: /submitedit/.*
+  script: _go_app
+  login: required
+- url: /destroy/.*
+  script: _go_app
+  login: required
